@@ -37,12 +37,12 @@ def get_new_access_token():
         response.raise_for_status()  # Raise HTTPError for bad responses
 
         new_access_token = response.json()["access_token"]
-        print("✅ New access token generated.")
+        print("New access token generated.")
         tokens["access_token"] = new_access_token
         return new_access_token
 
     except requests.exceptions.RequestException as e:
-        print(f"❌ Failed to refresh token: {e}")
+        print(f"Failed to refresh token: {e}")
         raise
 
 
@@ -81,10 +81,10 @@ def upload_parquet_to_s3(bucket_name, data, filename_prefix):
             Body=buffer.getvalue(),
             ContentType="application/octet-stream"
         )
-        print(f"✅ Uploaded to s3://{bucket_name}/{key}")
+        print(f"Uploaded to s3://{bucket_name}/{key}")
     
     except boto3.exceptions.S3UploadFailedError as e:
-        print(f"❌ Failed to upload to S3: {e}")
+        print(f"Failed to upload to S3: {e}")
         raise
 
 
@@ -134,9 +134,9 @@ def copy_into_top_tracks():
     try:
         with conn.cursor() as cs:
             cs.execute(query)
-            print("✅ COPY INTO for top_tracks succeeded.")
+            print("COPY INTO for top_tracks succeeded.")
     except Exception as e:
-        print(f"❌ COPY INTO for top_tracks failed: {e}")
+        print(f"COPY INTO for top_tracks failed: {e}")
         raise
     finally:
         conn.close()

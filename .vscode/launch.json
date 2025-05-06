@@ -1,18 +1,13 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        
-      {
-        "name": "Flask App (launch)",
-        "type": "python",
-        "request": "launch",
-        "module": "flask",
-        "env": {
-          "FLASK_APP": "run.py",
-          "FLASK_ENV": "development"
-        },
-        "args": ["run", "--no-debugger", "--no-reload", "--port=8000"],
-        "jinja": true
-      }
-    ]
-  }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug run.py directly",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/run.py",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}

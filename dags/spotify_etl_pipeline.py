@@ -36,14 +36,14 @@ def generate_and_upload_parquet():
 
     # Proceed with access token and data extraction
     token = get_new_access_token_air()
-    print("✅ Access token received (not printing for safety)")
+    print(" Access token received (not printing for safety)")
 
-    # results = get_top_tracks(token)
-    # print("📈 Top tracks sample:")
-    # print(results.head())
+    results = get_top_tracks(token)
+    print(" Top tracks sample:")
+    print(results.head())
 
-    # upload_parquet_to_s3("spotify-data-bucket", results, "top-tracks")
-    # print('✅ Upload task finished')
+    upload_parquet_to_s3("spotify-data-bucket", results, "top-tracks")
+    print(' Upload task finished')
 
 
 with DAG(
@@ -61,7 +61,7 @@ with DAG(
 
     copy_into = SnowflakeOperator(
         task_id="copy_into_top_tracks",
-        snowflake_conn_id="snowflake_conn",  # Set up in Airflow UI
+        snowflake_conn_id="snowflake_conn", 
         sql="""
             copy into raw.spotify.top_tracks
             from (

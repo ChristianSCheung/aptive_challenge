@@ -111,6 +111,6 @@ def get_audio_features_for_tracks(track_ids, token):
             if feature:
                 audio_features.append(feature)
         except requests.exceptions.RequestException as e:
-            print(f"❌ Failed to fetch features for track {track_id}: {e}")
+            print(f" Failed to fetch features for track {track_id}: {e}")
 
     return audio_features

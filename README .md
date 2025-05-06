@@ -1,14 +1,14 @@
 
 # Aptive Technical Challenge
 
-This project is a simplified data pipeline that extracts Spotify top tracks data, enriches it with audio features, and loads it into Snowflake for further analysis using dbt. It includes Docker setup, scheduled orchestration, and transformations through dbt models.
+This project is a data pipeline that extracts my friends Spotify top tracks data, enriches it with audio features, and loads it into Snowflake for further analysis using dbt. 
 
 ## Architecture
 
 ```
 Spotify API (Top Tracks)
         ↓
-Audio Features CSV (fallback due to API limitations)
+Audio Features CSV (fallback due to API deprecation)
         ↓
 Python Pipeline (run.py)
         ↓
@@ -33,7 +33,6 @@ Aptive Technical Challenge/
 ├── run.py                    # Entry point to run the pipeline
 ├── spotify_models/           # dbt models
 ├── spotify_tokens.json       # Spotify OAuth tokens
-└── target/                   # dbt build artifacts
 ```
 
 ## Setup Instructions
