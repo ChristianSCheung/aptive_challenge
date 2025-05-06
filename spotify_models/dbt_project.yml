@@ -1,0 +1,11 @@
+name: spotify_models
+version: '1.0.0'
+config-version: 2
+
+profile: spotify_models
+
+model-paths: ["models"]
+
+models:
+  spotify_models:
+    +materialized: table

@@ -1,0 +1,18 @@
+# Core
+flask
+requests
+pandas
+python-dotenv
+sqlalchemy
+
+# AWS S3 support
+boto3
+pyarrow<19.0.0  # for compatibility with Snowflake connector
+
+# Snowflake
+snowflake-connector-python
+apache-airflow-providers-snowflake
+
+# DBT
+dbt-core==1.9.4
+dbt-snowflake==1.9.4

@@ -1,0 +1,9 @@
+
+sources:
+  - name: spotify
+    database: raw
+    schema: spotify
+    tables:
+      - name: top_tracks
+      - name: audio_features
+

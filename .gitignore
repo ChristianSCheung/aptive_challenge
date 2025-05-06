@@ -1,0 +1,15 @@
+# Ignore the virtual environment folder
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore local data files (like CSV or Parquet)
+data/
+
+# Ignore environment variable file (if you store credentials here)
+.env
+
+# Ignore macOS system file (if you're on Mac)
+.DS_Store
